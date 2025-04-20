@@ -1,0 +1,16 @@
+url,label
+https://example.com/home,benign
+https://google.com/search?q=hello,benign
+https://github.com/open-source,benign
+https://test.com/?q=<script>alert(1)</script>,xss
+http://fake.com/img.png" onerror="malicious(),xss
+https://xss.com/#javascript:alert('XSS'),xss
+https://login.com/?user=admin'--,sqli
+http://shop.com/id=1 UNION SELECT credit_card FROM users,sqli
+https://vuln.net/?id=1; DROP TABLE users--,sqli
+http://attacker.com/ping?target=example.com,ddos
+https://botnet.com/c2?cmd=flood,ddos
+http://evil.org/?ip=1.1.1.1&port=80&time=1000,ddos
+http://secure-login.bankofamerica.com.verify-user.ru,phishing
+http://update-hdfcbank.info/NetBanking/login,phishing
+http://chaseonline.verify.info/login.php,phishing
